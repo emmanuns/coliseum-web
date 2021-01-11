@@ -1,6 +1,8 @@
 import React, { FormEvent, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+import '../styles/pages/loginPage.css';
+
 interface FormProps {
     email: string;
     password: string;
@@ -33,7 +35,7 @@ function LoginForm(props: FormProps){
     };
 
     return(
-        <div>
+        <div id="form-margin">
             <h1> Login </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>

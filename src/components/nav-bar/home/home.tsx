@@ -4,30 +4,30 @@ import { BrowserRouter as Router,
     Route,
     Link } from 'react-router-dom'
 
-import "../../../pages/loginPromoter.tsx"
-import LoginPromoter from '../../../pages/loginPromoter';
+
+import Logo from '../../../assets/image/logo.png';   
+import RegisterUser from '../../../pages/registerUser';
+import {NavBarMargin, LogoMargin, OptionsMargin} from "../../../styles/components/homeNav";
 
 export default function NavBarHome() {
     return (
         <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/home">Home Page</Link>
-              </li>
-              <li>
-                <Link to="/login">Login Page</Link>
-              </li>
-            </ul>
-  
-            <Switch>
-              <Route path="/login" component={LoginPromoter}>
-              </Route>
-              <Route path="/home">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
+            <NavBarMargin> 
+                <LogoMargin>
+                        <Link to="/home"> <img src={Logo}/> </Link>
+                </LogoMargin>
+                    <OptionsMargin>
+                        <Link to="/register">Cadastrar conta</Link>
+                        <Link to=""> Baixe o app</Link>
+                    </OptionsMargin>
+                    <Switch>
+                    <Route path="/register" component={RegisterUser}>
+                    </Route>
+                    <Route path="/home">
+                        <Home />
+                    </Route>
+                    </Switch>
+            </NavBarMargin>
         </Router>
     
     );

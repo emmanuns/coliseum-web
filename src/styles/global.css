@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #06707E;
+    background: #EFEFEF;
+  }
+  
+  body, input, button, textarea {
+    font: 300 18px Rubik, sans-serif;
+  }
+
+  
