@@ -1,15 +1,10 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import LoginPromoter from "./pages/loginPromoter";
+import NavBarHome from "./components/nav-bar/home/home";
 
 const Routes: React.FC = () => {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route path="/login" component={LoginPromoter}/>
-            </Switch>
-        </BrowserRouter>
+        <NavBarHome></NavBarHome>
     );
 };
 

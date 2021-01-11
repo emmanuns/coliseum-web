@@ -5,6 +5,7 @@ interface FormProps {
     email: string;
     password: string;
 }
+  
 
 function LoginForm(props: FormProps){
 
@@ -50,5 +51,7 @@ function LoginForm(props: FormProps){
         </div>
     );
 }
+
+
 
 export default LoginForm;
