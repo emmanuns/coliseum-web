@@ -6,7 +6,7 @@ import { BrowserRouter as Router,
 
 
 import Logo from '../../../assets/image/logo.png';   
-import RegisterUser from '../../../pages/registerUser';
+import RegisterPromoter from '../../../pages/registerPromoter';
 import {NavBarMargin, LogoMargin, OptionsMargin} from "../../../styles/components/homeNav";
 
 export default function NavBarHome() {
@@ -21,7 +21,7 @@ export default function NavBarHome() {
                         <Link to=""> Baixe o app</Link>
                     </OptionsMargin>
                     <Switch>
-                    <Route path="/register" component={RegisterUser}>
+                    <Route path="/register" component={RegisterPromoter}>
                     </Route>
                     <Route path="/home">
                         <Home />
