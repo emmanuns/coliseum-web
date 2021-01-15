@@ -1,5 +1,4 @@
 import { useState } from "react";
-import InputMask from "react-input-mask";
 import { useForm } from "react-hook-form";
 
 import api from '../services/api';
@@ -22,11 +21,12 @@ export default function RegisterPromoter(){
     const { register, handleSubmit, errors, getValues } = useForm({ mode: 'onTouched' });
     const onSubmit = (data: RegisterData) => { 
         data.role = 'promoter';
+        data.gender = 'male';
         console.log(data)
         api.post('api/register', data).then(response => {
             console.log('Cadastro feito com sucesso!')
             alert('Cadastro feito com sucesso!')
-        });
+        }).catch(err=> {console.log (err)});
     };
 
     const onError = (errors: Object) => { console.log(errors) };
@@ -35,6 +35,7 @@ export default function RegisterPromoter(){
     const [birthdate, setBirthDate] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [gender, setGender] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -57,7 +58,7 @@ export default function RegisterPromoter(){
                 </div>
                 <div>
                         <label>Telefone:</label>
-                        <InputMask type="tel" name="phone" value={phone} mask="(99) 99999-9999"   onChange={(e) => setPhone(e.target.value)}/> {errors.phone && <span>Preencha esse campo</span>}
+                        <input type="tel" name="phone" ref= {register} value={phone} onChange={(e) => setPhone(e.target.value)}/> {errors.phone && <span>Preencha esse campo</span>}
                 </div>
                 <div>
                         <label>Senha:</label>
